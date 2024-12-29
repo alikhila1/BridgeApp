@@ -1,0 +1,167 @@
+/* admin.component.css */
+
+
+/* Style global pour le panel d'admin */
+
+.admin {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #b02c64;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td img {
+    max-width: 100px;
+    border-radius: 5px;
+}
+
+td button {
+    background-color: #ffa500;
+    margin-right: 10px;
+}
+
+td button:hover {
+    background-color: #ff8c00;
+}
+
+p {
+    text-align: center;
+    color: #555;
+}
+
+
+/* Style for Modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-actions button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal-actions button:hover {
+    background-color: #45a049;
+}
+
+button[type="submit"] {
+    background-color: #b02c64;
+}
+
+button[type="submit"]:hover {
+    background-color: #c2879f;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Style for the Search Bar */
+
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 400px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #4CAF50;
+    /* Green border on focus */
+}
+
+.search-bar input::placeholder {
+    color: #888;
+    /* Lighter placeholder text */
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    /* Make the input take the full width */
+}

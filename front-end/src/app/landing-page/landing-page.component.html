@@ -1,0 +1,43 @@
+<div class="landing-page">
+    <header>
+        <img src="assets/LogoBridge.png" alt="logo" class="logo-image" />
+    </header>
+    <section class="hero">
+        <img src="assets/hero-image.jpg" alt="Hero" class="hero-image" />
+        <div class="hero-text">
+            <h1>Improve your skills on your own <br> To prepare for a better future</h1>
+            <a href="#courses" class="btn">REGISTER NOW</a>
+        </div>
+    </section>
+    <div id="courses-header" class="courses-header">
+        <h1 id="disc" class="disc">Discover Our Courses</h1>
+        <a href="#courses" class="btn">View More</a>
+    </div>
+    <section id="courses" class="courses">
+
+        <div class="course-list">
+            <div class="course" *ngFor="let course of courses">
+                <img [src]="course.image" [alt]="course.title" />
+                <h3>{{ course.title }}</h3>
+                <p>{{ course.price }} DT/Month</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Contact Us</h3>
+        <form>
+            <label for="name">NAME</label>
+            <input id="name" type="text" placeholder="Jiara Martins" required />
+
+            <label for="email">EMAIL</label>
+            <input id="email" type="email" placeholder="hello@gmail.com" required />
+
+            <label for="message">MESSAGE</label>
+            <textarea id="message" placeholder="Write your message here" name="message" required></textarea>
+
+            <button type="submit">Send the message</button>
+        </form>
+    </footer>
+
+</div>

@@ -1,0 +1,19 @@
+# Angular (front-end)
+node_modules/
+dist/
+*.log
+
+# Spring Boot (back-end)
+target/
+*.log
+*.class
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+
+# IDEs
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,58 @@
+<div class="admin">
+    <h1>Admin Panel</h1>
+
+    <!-- Form to Add Course -->
+    <form (submit)="addCourse(); $event.preventDefault();">
+        <input type="text" placeholder="Title" [(ngModel)]="newCourse.title" name="title" required />
+        <input type="text" placeholder="Image URL" [(ngModel)]="newCourse.image" name="image" required />
+        <input type="number" placeholder="Price" [(ngModel)]="newCourse.price" name="price" required />
+        <button type="submit">Add Course</button>
+    </form>
+
+    <!-- Edit Course Modal -->
+    <div class="modal" *ngIf="selectedCourse">
+        <div class="modal-content">
+            <h2>Edit Course</h2>
+            <form (submit)="updateCourse(); $event.preventDefault();">
+                <input type="text" placeholder="Title" [(ngModel)]="selectedCourse.title" name="title" required />
+                <input type="text" placeholder="Image URL" [(ngModel)]="selectedCourse.image" name="image" required />
+                <input type="number" placeholder="Price" [(ngModel)]="selectedCourse.price" name="price" required />
+                <div class="modal-actions">
+                    <button type="submit">Update Course</button>
+                    <button (click)="selectedCourse = null;" style="background-color: #636c74;">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search by title" [(ngModel)]="searchQuery" (input)="filterCourses()" />
+    </div>
+
+    <!-- Table to display all courses -->
+    <h2>All Courses</h2>
+    <table *ngIf="filteredCourses.length > 0">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of filteredCourses">
+                <td>{{ course.title }}</td>
+                <td><img [src]="course.image" alt="{{ course.title }}" width="100" /></td>
+                <td>{{ course.price }}</td>
+                <td>
+                    <button (click)="selectCourse(course)">Edit</button>
+                    <button (click)="deleteCourse(course.id)" style="background-color: red;">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p *ngIf="filteredCourses.length === 0">No courses available.</p>
+</div>
